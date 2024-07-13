@@ -25,6 +25,11 @@ class Result {
         return winningTypeCounts.toMap()
     }
 
+    fun calculateRateOfReturn(purchaseAmount: Int): Double {
+        val earned = winningTypeCounts.entries.sumOf { (type, count) -> type.price * count }
+        return earned / purchaseAmount.toDouble() * 100
+    }
+
     companion object {
         private const val DEFAULT_COUNT_VALUE = 0
     }

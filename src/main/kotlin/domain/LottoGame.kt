@@ -31,6 +31,10 @@ class LottoGame {
         return result.getStatistics()
     }
 
+    fun getRateOfReturn(amount: Int): Double {
+        return result.calculateRateOfReturn(amount)
+    }
+
     companion object {
         private const val MIN_AMOUNT = 0
         private const val AMOUNT_UNIT = 1000

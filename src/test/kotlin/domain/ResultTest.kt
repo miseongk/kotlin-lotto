@@ -19,4 +19,13 @@ class ResultTest : StringSpec({
             statistics[WinningType.FIVE_BONUS] shouldBe 1
         }
     }
+
+    "수익률을 계산한다" {
+        val result = Result()
+        result.addEachResult(3, false)
+
+        val rateOfReturn = result.calculateRateOfReturn(8000)
+
+        rateOfReturn shouldBe 62.5
+    }
 })
