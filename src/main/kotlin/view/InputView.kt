@@ -10,11 +10,7 @@ object InputView {
     }
 
     private fun validateInt(input: String) {
-        try {
-            input.toInt()
-        } catch (e: NumberFormatException) {
-            throw IllegalArgumentException("[ERROR] 숫자가 아닙니다.")
-        }
+        input.toIntOrNull() ?: throw IllegalArgumentException("[ERROR] 숫자가 아닙니다.")
     }
 
     fun readWinningNumbers(): List<Int> {
